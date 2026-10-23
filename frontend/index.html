@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wayfare - Travel Bus Booking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section id="login" hidden>
+  <div class="hero">
+    <div class="brand">Wayfare</div>
+    <h1>Pick a seat.<br>Skip the counter.</h1>
+    <p>Search trips between cities, choose your seat and keep every ticket in one place.</p>
+    <div class="road" aria-hidden="true"></div>
+  </div>
+  <div class="formside">
+    <form id="loginForm" class="card-form" autocomplete="on">
+      <h2 id="formTitle">Sign in</h2>
+      <div class="roles" id="roles" role="radiogroup" aria-label="Sign in as">
+        <button type="button" role="radio" data-role="customer" aria-checked="true">Customer</button>
+        <button type="button" role="radio" data-role="manager" aria-checked="false">Bus manager</button>
+        <button type="button" role="radio" data-role="admin" aria-checked="false">Admin</button>
+      </div>
+      <div id="regFields" hidden>
+        <label>Full name<input name="name" autocomplete="name"></label>
+        <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
+      </div>
+      <label>Username<input name="username" required autocomplete="username"></label>
+      <label>Password
+        <span class="pw"><input name="password" type="password" required autocomplete="current-password"><button type="button" id="pwToggle" aria-label="Show password" aria-pressed="false">Show</button></span>
+      </label>
+      <p id="loginErr" class="err" role="alert" hidden></p>
+      <button class="btn primary wide" id="loginBtn">Sign in</button>
+      <p class="switch" id="switchLine">New here? <a href="#" id="switchLink">Create a customer account</a></p>
+    </form>
+  </div>
+</section>
+
+<div id="app" hidden>
+  <aside class="side">
+    <div class="brand small">Wayfare</div>
+    <nav id="nav"></nav>
+    <div class="who"><b id="whoName"></b><span id="whoRole"></span></div>
+  </aside>
+  <div class="content">
+    <header class="top">
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button>
+      <span id="crumb"></span>
+      <button class="btn ghost" id="logoutBtn">Log out</button>
+    </header>
+    <main id="main"></main>
+  </div>
+</div>
+
+<div id="modal" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
